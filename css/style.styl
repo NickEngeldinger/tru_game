@@ -1,22 +1,161 @@
 /*  IMPORTS  */
-@import 'normalize.min.css'
-@import 'main.css'
-
+@import 'normalize.min.css';
+@import 'main.css';
 
 /*  FONTS  */
-
+@font-face
+    font-family 'pastcorps'
+    src url('../fonts/pastcorps.eot')
+    src url('../fonts/pastcorps.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/pastcorps.woff') format('woff'),
+        url('../fonts/pastcorps.ttf') format('truetype'),
+        url('../fonts/pastcorps.svg#pastcorpsregular') format('svg')
+    font-weight normal
+    font-style normal
 
 /*  COLORS  */
-titleCopy = #000
+mainBg = #1c1c1c
 bodyCopy = #fff
+btn = #060
 
+/*  MIXINS  */
+fadeTransition(duration)
+	-webkit-transition opacity duration ease
+	-moz-transition opacity duration ease
+	transition opacity duration ease
 
 /*  BASE STYLES */
 body
-	bodyCopy
+	background-color mainBg
+	background-image url('../img/dark_wall.png')
+	color bodyCopy
+
+a 
+	color bodyCopy
+	text-decoration none
 
 h1,h2
-	titleCopy
+	font-family 'pastcorps'
+	font-size 8em
+	font-weight normal
+	margin 0
+	padding 0
+	text-align center
+
+hr
+	margin 4.25em 0 0.5em 0
+
+h2 
+	margin 0.25em 0
+
+ul
+	margin 0
+	padding 0
+
+li
+	
+	list-style-type none
+
+/*  RESPONSIVE STRUCTURE  */
+/*  MOBILE FIRST LAYOUT   */
+.main 
+	margin 10%
+	padding 20px 10%
+	width 50%
+
+header
+	margin-bottom 100px
+
+a
+	display block
+	text-align center
 
 
-/*  CASSETTE PLAYER  */
+h1
+	line-height 0.5em
+
+h2
+	line-height 0.62em
+
+h1 span, h2 span
+	display block
+
+li
+	font-size 11px
+	
+	&:hover
+		text-decoration underline
+	&:active
+		color btn
+
+.cta li 
+	background-color btn
+	border solid 2px btn
+	border-radius 3px
+	margin-top 10px
+
+img
+	margin 1em 0
+	max-width 600px
+	width 100%
+
+.tracklist+img
+	display none
+
+/*  SMALL  */
+@media only screen and (min-width: 480px)
+	h1 span, h2 span
+		display inline
+
+	.cta li
+		float left
+		margin 0 0.25em
+		paddding 0 0.25em
+
+	section:nth-of-type(2)
+		clear both
+
+/*  MEDIUM  */
+
+
+/*  LARGE  */
+
+/*  ANIMATION EFFECTS  */
+.main
+	opacity 0
+	fadeTransition(0.33s)
+
+.loaded .main, .no-js .main
+	opacity 1
+
+/*  RETINA IMG  */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+	.main
+		background url('../img/dark_wall_@2x.png')
+
+/*  LINKS LIST */
+/*
+.cta li
+	a
+		display block
+		height 110px
+		text-indent -9999px
+		width 180px
+
+	&:nth-of-type(1) a
+		background url('../img/fb.png') 0 50% no-repeat
+
+	&:nth-of-type(2) a
+		background url('../img/soundcloud.png') 0 50% no-repeat
+
+	&:nth-of-type(3) a 
+		background url('../img/coast2coast.gif') 0 50% no-repeat
+	
+	&:nth-of-type(4) a 
+		background url('../img/reverbnation.png') 0 50% no-repeat
+
+	&:nth-of-type(5) a 
+		background url('../img/datpiff.png') 0 50% no-repeat
+*/
+
+/*  CD PLAYER  */
