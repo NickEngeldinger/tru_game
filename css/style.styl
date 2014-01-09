@@ -24,6 +24,9 @@ fadeTransition(duration)
 	-moz-transition opacity duration ease
 	transition opacity duration ease
 
+spinElement(degrees)
+	-webkit-transform	
+
 /*  BASE STYLES */
 body
 	background-color mainBg
@@ -103,10 +106,8 @@ img
 	display none
 
 /*  SMALL  */
+/* Compact but some landscape orientation devices will need */
 @media only screen and (min-width: 480px)
-	h1 span, h2 span
-		display inline
-
 	.cta li
 		float left
 		margin 0 0.25em
@@ -116,9 +117,13 @@ img
 		clear both
 
 /*  MEDIUM  */
-
+@media only screen and (min-width: 768px)
+	/* Laptops, square desktops */
+	h1 span, h2 span
+		display inline
 
 /*  LARGE  */
+@media only screen and (min-width: 1140px)
 
 /*  ANIMATION EFFECTS  */
 .main
